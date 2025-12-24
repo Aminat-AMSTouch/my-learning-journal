@@ -4,8 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    
+   <div class="max-w-sm mx-auto mt-10 p-6">
+     <div class="text-2xl font-bold">To do list</div>
+    <input type="text" id="tastInput" placeholder="Enter your To-do" class="border p-2">
+    <button id="addBtn" class="bg-blue-600 p-2" onclick="addTask()">Add</button>
+
+    <ul id="taskList"></ul>
+   </div>
+
+    <script>
+        const taskInput = document.getElementById("taskInput");
+        const taskList = document.getElementById("taskList");
+
+        function addTask(){
+            const taskText = tastInput.value.trim();
+            if (taskText === ""){
+                alert("please enter your To-do.");
+                return
+            }
+
+
+            const li = document.createElement("li");
+            li.textContent = taskText + " ";
+
+            li.style.display = "flex"
+            li.style.justifyContent = "space-between"
+            li.style.alignItems = "center"
+            li.style.marginBottom = "10px" 
+
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "Delete";
+
+            deleteBtn.style.backgroundColor = "red"
+            deleteBtn.style.Color = "white"
+            deleteBtn.onclick = () => taskList.removeChild(li);
+
+            li.appendChild(deleteBtn);
+            taskList.appendChild(li);
+
+            tastInput.value = "";
+        }
+    </script>
 </body>
 </html>
