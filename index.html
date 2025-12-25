@@ -20,6 +20,7 @@
     <h1 class="text-2xl font-bold">A Counter</h1>
     <p id="counting" class="font-bold text-4xl text-blue-800">0</p>
     <button class="bg-green-800 text-white p-2 rounded" onclick="increment()">increment</button>
+    <button class="bg-yellow-200 text-black p-2 rounded" onclick="decrement()">decrement</button>
     <button class="bg-red-600 text-white px-4 py-2 rounded" onclick="reset()">Reset</button>
  </div>
 
@@ -79,8 +80,12 @@
         let counting = 0;
         const countingSpace = document.getElementById('counting');
         function increment(){
-            counting++;
-            countingSpace.textContent = counting++;
+            counting+= 1;
+            countingSpace.textContent = counting;
+        }
+        function decrement(){
+            counting -= 1;
+            countingSpace.textContent = counting;
         }
         function reset(){
             counting = 0
