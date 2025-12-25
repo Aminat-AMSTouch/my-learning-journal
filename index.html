@@ -15,7 +15,31 @@
     <ul id="taskList"></ul>
    </div>
 
+<!-- COUNTER  -->
+ <div class="max-w-sm mx-auto mt-10 p-6 bg-gray-100 shadow text-center">
+    <h1 class="text-2xl font-bold">A Counter</h1>
+    <p id="counting" class="font-bold text-4xl text-blue-800">0</p>
+    <button class="bg-green-800 text-white p-2 rounded" onclick="increment()">increment</button>
+    <button class="bg-red-600 text-white px-4 py-2 rounded" onclick="reset()">Reset</button>
+ </div>
+
+
+ <!-- COLOUR SWITCHER  -->
+  <div class="max-w-sm mx-auto mt-10 p-6 shadow text-center align-center" id="backGround">
+    <h1 class="text-2xl font-bold"> Color Switcher</h1>
+    <button class="bg-green-600 rounded shadow p-2" onclick="colorChanger('green')">green</button>
+    <button class="bg-red-600 rounded shadow p-2" onclick="colorChanger('red')">Red</button>
+    <button class="bg-black rounded shadow text-white p-2 " onclick="colorChanger('black')">Black</button>
+    <button class="bg-white rounded shadow text-black p-2" onclick="colorChanger('white')">white</button>
+    <button class="bg-purple-800 rounded shadow text-white p-2" onclick="colorChanger('purple')">purple</button>
+  </div>
+
+
+
+
+
     <script>
+        // TO-DO LIST 
         const taskInput = document.getElementById("taskInput");
         const taskList = document.getElementById("taskList");
 
@@ -47,7 +71,33 @@
             taskList.appendChild(li);
 
             tastInput.value = "";
+        } 
+        // THE END OF TO-DO LIST 
+
+
+        // COUNTER 
+        let counting = 0;
+        const countingSpace = document.getElementById('counting');
+        function increment(){
+            counting++;
+            countingSpace.textContent = counting++;
         }
+        function reset(){
+            counting = 0
+            countingSpace.textContent = counting;
+        }
+       
+
+        //COLOR SWITCHER
+        // const backGround = document.getElementById("backGround");
+
+        function colorChanger(color){
+            const box = document.getElementById('backGround');
+            box.style.backgroundColor =color;
+
+            box.style.color = (color === 'black')? 'white' : 'black';
+        }
+        
     </script>
 </body>
 </html>
