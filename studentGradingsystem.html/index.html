@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT GRADING SYSTEM</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+
+ <h1>STUDENT GRADING SYSTEM</h1>  
+ <h2>Add New Student</h2>
+ <input type="text" id="name" placeholder="Student Name">
+ <input type="text" id="subject" placeholder="Subject"> 
+ <input type="number" id="score" placeholder="Score (0-100)">
+ <button onclick="addStudent()">Add Student</button>
+
+ <h4>Search Student</h4>
+ <input type="text" id="searchName" placeholder="Search by name">
+ <button onclick="searchStudents()">Search</button>
+
+ <h2>Student List</h2>
+ <table id="studentTable">
+   <thead>
+    <tr>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Score</th>
+        <th>Grade</th>
+    </tr>
+ 
+   </thead>
+   <tbody></tbody>
+ </table>
+ 
+ <h2>filters</h2>
+ <button onclick="calculateAverage()">Class Average</button>
+ <button onclick="highestScore()">Highest Score</button>
+ <button onclick="lowestScore()">Lowest Score</button>
+
+
+ <div id="results"></div>
+</body>
+<script src="index.js"></script>
+</html>
